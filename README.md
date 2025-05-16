@@ -141,3 +141,8 @@ If you use this code, please cite:
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
+
+
+## Acknowledgement
+
+Our implementation adapts [Time-Series-Library](https://github.com/thuml/Time-Series-Library) as the code base and have extensively modified it to our purposes. We thank the authors for sharing their implementations and related resources.
