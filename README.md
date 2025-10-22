@@ -10,6 +10,26 @@ SynTSBench is a comprehensive benchmark framework for evaluating time series dee
 
 SynTSBench helps researchers and practitioners understand which deep learning architectures are best suited for specific time series patterns and characteristics.
 
+## Framework Overview
+
+<div align="center">
+  <img src="pic/SynTSBench_framework.pdf" alt="SynTSBench Framework" width="100%">
+  
+  **Figure 1: Overview of SynTSBench Framework**
+</div>
+
+SynTSBench is a synthetic data-based evaluation framework for time series forecasting models. As illustrated in the figure above, the framework employs a systematic approach to assess model capabilities:
+
+1. **Data Generation Layer**: The framework generates controlled time series data from basic univariate components (such as trends, seasonality, and noise) to complex multivariate patterns with defined inter-variable relationships.
+
+2. **Evaluation Dimensions**: The framework systematically assesses model capabilities across multiple dimensions:
+   - **Temporal Pattern Learning**: Evaluates the model's ability to capture fundamental temporal patterns like trends and seasonality
+   - **Robustness**: Tests the model's resistance to disturbances such as noise and outliers
+   - **Dependency Modeling**: Assesses the model's capability to understand and leverage complex dependencies among multiple variables
+   - **Complex Pattern Recognition**: Tests the model's performance on non-linear patterns, long-term dependencies, and other complex scenarios
+
+3. **Controllability Advantage**: Through synthetic data generation, we can precisely control various data characteristics, enabling deep insights into the strengths and limitations of different model architectures in specific scenarios.
+
 ## Key Features
 
 - **Synthetic Data Generation**: Generate diverse time series datasets with controlled properties like:
