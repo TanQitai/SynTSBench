@@ -1,4 +1,4 @@
-# SynTSBench: A Synthetic Time Series Benchmark for Evaluating Deep Learning Models
+# SynTSBench: A Synthetic Time Series Benchmark for Evaluating Deep Learning Models (NeurIPS 2025)
 
 ## Overview
 
@@ -36,10 +36,11 @@ SynTSBench is a synthetic data-based evaluation framework for time series foreca
   - Trends (linear, non-linear)
   - Seasonal patterns (with varying periods)
   - Noise levels
-  - Multivariate relationships
-  - Long-distance dependencies
-  - Complex patterns
   - Anomalies
+  - Multivariate relationships
+  - Short/long range dependencies
+  - Complex patterns
+
 
 - **Multiple Tasks Support**:
   - Long-term forecasting
@@ -57,7 +58,7 @@ SynTSBench is a synthetic data-based evaluation framework for time series foreca
 
 ## Repository Structure
 
-- `Data_generation/`: Jupyter notebooks for generating synthetic time series
+- `dataset/`: Jupyter notebooks for generating synthetic time series
 - `data_provider/`: Data loading and processing utilities
 - `exp/`: Experiment modules for different tasks
 - `layers/`: Neural network layer implementations
@@ -81,7 +82,7 @@ pip install -r requirements.txt
 
 ### Generate Synthetic Data
 
-Use the notebooks in the `Data_generation/` directory to generate synthetic time series datasets with specific properties.
+Use the notebooks in the `dataset/` directory to generate synthetic time series datasets with specific properties.
 
 ### Run a Benchmark
 
@@ -100,33 +101,24 @@ python run.py \
   --pred_len 96 \
   --e_layers 2 \
   --d_model 512 \
-  --top_k 5
 ```
 
-### Generate Scripts for Multiple Models
-
-For batch experiments, use the script generation utilities:
-
-```bash
-python generate_model_script.py --output_dir scripts
-```
 
 ## Available Models
 
 SynTSBench includes 30+ time series models such as:
 
-- Transformer-based: `Transformer`, `Informer`, `Autoformer`, `FEDformer`, `Pyraformer`, `ETSformer`, `iTransformer`
-- MLP-based: `DLinear`, `TSMixer`, `TimeMixer`, `PaiFilter`, `TexFilter`
+- Transformer-based: `Transformer`, `Informer`, `Autoformer`, `FEDformer`, `Pyraformer`, `ETSformer`, `iTransformer`, `PatchTST`, `Crossformer`, `LightTS`, `Reformer`, `CATS`
+- MLP-based: `DLinear`, `TSMixer`, `TimeMixer`, `PaiFilter`, `TexFilter`, `N-BEATS`
 - CNN-based: `SCINet`, `TimesNet`
-- RNN-based: `SegRNN`
-- Attention-based: `PatchTST`, `Crossformer`, `LightTS`, `Reformer`
+- RNN-based: `SegRNN`, `TPGN`
 - Advanced architectures: `TimeLLM`, `TimeKAN`, `Mamba`, `MambaSimple`, `Koopa`
 
 ## Customizing Experiments
 
 ### Creating Custom Data Generators
 
-Add custom data generation scripts in the `Data_generation/` directory.
+Add custom data generation scripts in the `dataset/` directory.
 
 ### Adding New Models
 
@@ -139,9 +131,7 @@ Add custom data generation scripts in the `Data_generation/` directory.
 After running experiments, use the collection scripts to gather results:
 
 ```bash
-python collect_results_univariate.py
-# or
-python collect_results_multivariate.py
+python collect_results.py
 ```
 
 ## Citation

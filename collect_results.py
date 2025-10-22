@@ -5,13 +5,13 @@ import re
 from collections import defaultdict
 
 # 结果目录
-results_dir = './results_noise'
+results_dir = './results_anomaly'
 
 # 指标名称
 metrics_names = ['mae', 'mse', 'rmse', 'mape', 'mspe']
 
 # 输出目录
-output_dir = './result_summary_noise'
+output_dir = './result_summary_anomaly'
 os.makedirs(output_dir, exist_ok=True)
 
 # 存储所有结果的字典
