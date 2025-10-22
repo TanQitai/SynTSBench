@@ -13,7 +13,7 @@ SynTSBench helps researchers and practitioners understand which deep learning ar
 ## Framework Overview
 
 <div align="center">
-  <img src="pic/SynTSBench_framework.pdf" alt="SynTSBench Framework" width="100%">
+  <img src="pic/SynTSBench_framework.png" alt="SynTSBench Framework" width="100%">
   
   **Figure 1: Overview of SynTSBench Framework**
 </div>
